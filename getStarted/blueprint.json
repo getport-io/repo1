@@ -1,0 +1,27 @@
+{
+  "identifier": "service",
+  "title": "Service",
+  "icon": "Microservice",
+  "schema": {
+    "properties": {
+      "readme": {
+        "title": "README",
+        "type": "string",
+        "format": "markdown"
+      },
+      "url": {
+        "title": "Repository URL",
+        "type": "string",
+        "format": "url"
+      },
+      "language": {
+        "title": "Language",
+        "type": "string"
+      }
+    },
+    "required": []
+  },
+  "mirrorProperties": {},
+  "calculationProperties": {},
+  "relations": {}
+}

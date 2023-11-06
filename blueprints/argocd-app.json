@@ -1,0 +1,72 @@
+{
+    "identifier": "argocdApp",
+    "description": "This blueprint represents an Argo CD Application",
+    "title": "ArgoCD App",
+    "icon": "Deployment",
+    "schema": {
+      "properties": {
+        "syncPolicy": {
+          "type": "object",
+          "title": "Sync Policy",
+          "description": "Options for syncing the application with the Git repository"
+        },
+        "gitRepo": {
+          "type": "string",
+          "icon": "Git",
+          "title": "Repository URL",
+          "description": "The URL of the Git repository containing the application source code"
+        },
+        "gitPath": {
+          "type": "string",
+          "title": "Path",
+          "description": "The path within the Git repository where the application manifests are located"
+        },
+        "syncStatus": {
+          "type": "string",
+          "title": "Sync Status",
+          "description": "The sync status of the application"
+        },
+        "gitRev": {
+          "type": "string",
+          "title": "Target Revision",
+          "description": "The Git revision (branch, tag, or commit hash) to deploy"
+        }
+      },
+      "required": []
+    },
+    "mirrorProperties": {
+      "Cluster": {
+        "title": "Cluster",
+        "path": "destinationNamespace.Cluster.$title"
+      },
+      "Namespace": {
+        "title": "Namespace",
+        "path": "argocdProject.Namespace.$title"
+      },
+      "DestinationNamespace": {
+        "title": "Cluster",
+        "path": "destinationNamespace.$title"
+      }
+    },
+    "calculationProperties": {},
+    "relations": {
+      "workload": {
+        "title": "Workload",
+        "target": "workload",
+        "required": false,
+        "many": true
+      },
+      "argocdProject": {
+        "title": "Argo Project",
+        "target": "argocdProject",
+        "required": false,
+        "many": false
+      },
+      "destinationNamespace": {
+        "title": "Destination Namespace",
+        "target": "namespace",
+        "required": false,
+        "many": false
+      }
+    }
+  }

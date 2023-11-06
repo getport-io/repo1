@@ -1,0 +1,27 @@
+{
+    "identifier": "argocdProject",
+    "description": "This blueprint ArgoCD Project",
+    "title": "ArgoCD Project",
+    "icon": "Argo",
+    "schema": {
+      "properties": {},
+      "required": []
+    },
+    "mirrorProperties": {
+      "Cluster": {
+        "title": "Cluster",
+        "path": "Namespace.Cluster.$title"
+      }
+    },
+    "calculationProperties": {},
+    "relations": {
+      "Namespace": {
+        "title": "Namespace",
+        "description": "The project's Namespace",
+        "target": "namespace",
+        "required": false,
+        "many": false
+      }
+    }
+  }
+  

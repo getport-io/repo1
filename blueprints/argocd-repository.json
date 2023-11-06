@@ -1,0 +1,31 @@
+{
+    "identifier": "argocdRepo",
+    "description": "This blueprint represents a ArgoCD Repository",
+    "title": "ArgoCD Repository",
+    "icon": "Git",
+    "schema": {
+      "properties": {
+        "repoUrl": {
+          "type": "string",
+          "title": "Repository URL",
+          "format": "url",
+          "description": "The link to the repository"
+        },
+        "repoType": {
+          "type": "string",
+          "title": "Repository Type",
+          "description": "The repository type"
+        }
+      },
+      "required": []
+    },
+    "mirrorProperties": {},
+    "calculationProperties": {},
+    "relations": {
+      "Namespace": {
+        "target": "namespace",
+        "required": false,
+        "many": false
+      }
+    }
+  }
